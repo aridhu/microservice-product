@@ -9,8 +9,8 @@ import org.springframework.boot.CommandLineRunner;
 import com.aridhu.microservices.enterprise.product.service.ItemService;
 import com.aridhu.microservices.enterprise.product.service.domain.Item;
 
-@SpringBootApplication
-public class ProductApplication implements CommandLineRunner{
+@SpringBootApplication(scanBasePackages="com.aridhu.microservices.enterprise.product")
+public class ProductApplication {
 
 	final private ItemService itemService;
 
@@ -23,7 +23,7 @@ public class ProductApplication implements CommandLineRunner{
 	}
 	
 	
-	@Override
+	//@Override
 	public void run(String... args) throws Exception {
 		System.out.println("\n\nAridhu Product Microservices...");
 		// insert item table
@@ -42,5 +42,7 @@ public class ProductApplication implements CommandLineRunner{
 		List<Item> itemlist = this.itemService.findAll(); 
 		System.out.println(itemlist.get(0).getDescription());
 	}
+	
+	
 
 }

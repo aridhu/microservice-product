@@ -20,8 +20,13 @@ public class ItemService {
 		return this.itemMapper.findAll();
 	}
 
-	public void saveItem(Item item) throws Exception{
+	public Item saveItem(Item item) throws Exception{
 		this.itemMapper.saveItem(item);
+		return item;
+	}
+
+	public Item findItem(String itemNumber) {
+		return this.itemMapper.findByItemNumber(itemNumber);
 	}
 
 }
